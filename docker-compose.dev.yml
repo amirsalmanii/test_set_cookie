@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14.1
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=iranco_db
+      - POSTGRES_USER=iranco
+      - POSTGRES_PASSWORD=137794
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  
+volumes:
+  postgres-data:
