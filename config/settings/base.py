@@ -3,7 +3,7 @@ from dotenv import dotenv_values
 
 env_vars = dotenv_values()
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = env_vars.get("secret_key")
 
@@ -13,6 +13,7 @@ ALLOWED_HOSTS = []
 
 LOCAL_APPS = [
     "apps.api.apps.ApiConfig",
+    "web.apps.WebConfig"
 ]
 
 THIRD_PARTY_APPS = [
@@ -64,14 +65,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": env_vars.get("db_engine"),
+#         "NAME": env_vars.get("db_name"),
+#         "USER": env_vars.get("db_user"),
+#         "PASSWORD": env_vars.get("db_password"),
+#         "HOST": env_vars.get("db_host"),
+#         "PORT": env_vars.get("db_port"),
+#     }
+# }
+
 DATABASES = {
     "default": {
-        "ENGINE": env_vars.get("db_engine"),
-        "NAME": env_vars.get("db_name"),
-        "USER": env_vars.get("db_user"),
-        "PASSWORD": env_vars.get("db_password"),
-        "HOST": env_vars.get("db_host"),
-        "PORT": env_vars.get("db_port"),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 

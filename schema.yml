@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: iranco
+  version: 1.0.0
+paths:
+  /api/v1/test/:
+    get:
+      operationId: v1_test_retrieve
+      description: text
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: v1_test_create
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

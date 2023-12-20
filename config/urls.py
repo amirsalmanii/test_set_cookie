@@ -4,6 +4,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("api/v1/", include(("apps.api.urls", "api"))),
+    path("api/v1/", include(("web.urls", "web"))),
 ]
 
 if os.environ.get("DJANGO_SETTINGS_MODULE") == "config.settings.production":

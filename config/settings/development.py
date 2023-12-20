@@ -13,6 +13,12 @@ MIDDLEWARE += [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
+REST_FRAMEWORK.update(
+    {
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    }
+)
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 DEBUG_TOOLBAR_CONFIG = {
