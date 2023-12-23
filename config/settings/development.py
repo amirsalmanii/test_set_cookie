@@ -25,6 +25,10 @@ DEBUG_TOOLBAR_CONFIG = {
     "JQUERY_URL": "",
 }
 
-CORS_ALLOW_ALL_ORIGINS: True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_WHITELIST = [
+#     'http://127.0.0.1:4000',
+# ]
 
 from config.confd.swagger_ import *
